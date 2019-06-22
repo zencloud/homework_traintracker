@@ -1,5 +1,9 @@
 
 
-.app-header-container {
-    background-color: rgb(255, 111, 248);
+.jumbotron {
+    padding: 20px;
+}
+
+.bg-light-blue {
+    background-color: #ff9dc6;
 }

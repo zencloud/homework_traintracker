@@ -8,6 +8,7 @@
     <script src="app/js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d888994262.js"></script>
     <link rel="stylesheet" href="app/css/style.css">
     <title>Train Tracker</title>
 </head>
@@ -15,14 +16,14 @@
 <body>
 
     <header class="container">
-        <div class="app-header-container">
-            <p>Candy Train Tracker</p>
+        <div class="jumbotron text-center mt-2 bg-light-blue">
+            <h3>Christmas Train Tracker</h3>
         </div>
     </header>
 
     <!-- Render Train Information -->
     <div class="container">
-        <table class="table table-sm table-hover">
+        <table class="table table-sm table-hover table-striped">
             <thead>
                 <tr>
                     <th scope="col">Train Name</th>
@@ -34,51 +35,78 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td><i class="fas fa-star"></i> Candy Express</td>
+                    <td>Angel City</td>
+                    <td>25min</td>
+                    <td>7:05pm</td>
+                    <td>10 min</td>
                 </tr>
                 <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
+                    <td><i class="fas fa-star"></i> Stocking Special</td>
+                    <td>Candy Place</td>
+                    <td>15min</td>
+                    <td>6:55pm</td>
+                    <td>55 min</td>
                 </tr>
                 <tr>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
+                    <td><i class="fas fa-star"></i> Gift Rider</td>
+                    <td>Santa's Workshop</td>
+                    <td>55min</td>
+                    <td>8:00pm</td>
+                    <td>165 min</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="container">
-        <div class="card">
-            <h6 class="card-header">Add new train</h6>
+        <div class="card border-primary">
+            <h6 class="card-header bg-primary text-white"><i class="fas fa-key"></i> Train Admin</h6>
+            
             <form class="form" style="padding: 5px 20px 5px 20px">
-                <div class="form-group">
-                    <label for="inputName" class="font-weight-bold">Train Name</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Name...">
+
+                <label class="text-secondary font-weight-bold">Insert new train data</label>
+                <!-- Train Name -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputName"><i class="fas fa-train"></i>&nbsp;Train Name</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Name">
                 </div>
-                <div class="form-group">
-                    <label for="inputDestination" class="font-weight-bold">Destination</label>
-                    <input type="text" class="form-control" id="inputDestination" placeholder="Destination...">
+
+                <!-- Train Destination -->
+                <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01"><i class="fas fa-map-marker-alt"></i>&nbsp;Destination</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                          <option selected>Choose...</option>
+                          <option value="0">Angel City</option>
+                          <option value="1">Cookievale</option>
+                          <option value="2">Gumdrop Lodge</option>
+                          <option value="3">Lutie Lake</option>
+                          <option value="4">Snowcone Hill</option>
+                        </select>
+                      </div>
+
+                <!-- Train First Arrival -->
+                <small class="form-text text-info">Must use HH:mm format</small>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputFirstArrival"><i class="fas fa-clock"></i>&nbsp;First Arrival</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="HH:mm">
                 </div>
-                <div class="form-group">
-                    <label for="inputDestination" class="font-weight-bold">First Train Time (HH:mm)</label>
-                    <input type="text" class="form-control" id="inputDestination" placeholder="Destination...">
+                
+                <!-- Train Frequency -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-wave-square"></i>&nbsp;Frequency</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="City, State">
                 </div>
-                <div class="form-group">
-                    <label for="inputDestination" class="font-weight-bold">Frequency (minutes)</label>
-                    <input type="text" class="form-control" id="inputDestination" placeholder="Destination...">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i> Add Train</button>
             </form>
         </div>
     </div>
