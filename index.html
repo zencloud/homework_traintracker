@@ -62,57 +62,78 @@
     <div class="container">
         <div class="card border-primary">
             <h6 class="card-header bg-primary text-white"><i class="fas fa-key"></i> Train Admin</h6>
-            
-            <form class="form" style="padding: 5px 20px 5px 20px">
 
-                <label class="text-secondary font-weight-bold">Insert new train data</label>
+            <form action="javascript:app_input_submit()" class="form needs-validation" novalidate style="padding: 5px 20px 5px 20px">
+
                 <!-- Train Name -->
+                <label class="text-secondary font-weight-bold">Insert new train data</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputName"><i class="fas fa-train"></i>&nbsp;Train Name</span>
+                        <span class="input-group-text">
+                            <i class="fas fa-train">&nbsp;</i>Train Name
+                        </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control" placeholder="Name" id="input-name" required>
+                    <div class="invalid-feedback">
+                        Please inlcude a train name.
+                    </div>
                 </div>
 
                 <!-- Train Destination -->
                 <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <label class="input-group-text" for="inputGroupSelect01"><i class="fas fa-map-marker-alt"></i>&nbsp;Destination</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect01">
-                          <option selected>Choose...</option>
-                          <option value="0">Angel City</option>
-                          <option value="1">Cookievale</option>
-                          <option value="2">Gumdrop Lodge</option>
-                          <option value="3">Lutie Lake</option>
-                          <option value="4">Snowcone Hill</option>
-                        </select>
-                      </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-train">&nbsp;</i>Destination
+                        </span>
+                    </div>
+                    <select class="custom-select" id="input-dest" required>
+                        <option selected value="0">Angel City</option>
+                        <option value="1">Cookievale</option>
+                        <option value="2">Gumdrop Lodge</option>
+                        <option value="3">Lutie Lake</option>
+                        <option value="4">Snowcone Hill</option>
+                    </select>
+                </div>
 
                 <!-- Train First Arrival -->
-                <small class="form-text text-info">Must use HH:mm format</small>
-                <div class="input-group mb-3">
+                <small class="form-text text-info">Required: HH:mm (24h clock) format</small>
+                <div class="input-group mb-2">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputFirstArrival"><i class="fas fa-clock"></i>&nbsp;First Arrival</span>
+                        <span class="input-group-text" id="inputFirstArrival">
+                            <i class="fas fa-clock">&nbsp;</i>First Arrival
+                        </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="HH:mm">
-                </div>
-                
-                <!-- Train Frequency -->
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-wave-square"></i>&nbsp;Frequency</span>
+                    <input type="text" class="form-control" placeholder="Example: 18:45" id="input-time" required>
+                    <div class="invalid-feedback">
+                        Please inlcude a time.
                     </div>
-                    <input type="text" class="form-control" placeholder="City, State">
                 </div>
 
-                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i> Add Train</button>
+                <!-- Train Frequency -->
+                <small class="form-text text-info">Required: Frequency in minutes</small>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-wave-square">&nbsp;</i>Frequency
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Example: 25" id="input-freq" required>
+                    <div class="invalid-feedback">
+                        Please inlcude a frequency
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-1" id="input-btn-submit"><i class="fas fa-plus-square mr-3"></i>Add
+                    Train</button>
             </form>
         </div>
     </div>
 
 
-
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
+    <script src="app/js/moment.min.js"></script>
+    <script src="app/js/app-functions.js"></script>
     <script src="app/js/app.js"></script>
 </body>
 
