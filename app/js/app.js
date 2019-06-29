@@ -1,6 +1,4 @@
 
-
-
 /* App Flow
 
     (Render Data)
@@ -14,7 +12,8 @@
 
 // Core App Data
 const appData = {
-    inputCollection: {}
+    inputCollection: {},
+    lastPackage: {}
 }
 
 
@@ -33,4 +32,4 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-// Add listener to submit button
+app_data_collect();

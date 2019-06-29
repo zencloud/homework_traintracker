@@ -34,27 +34,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><i class="fas fa-star"></i> Candy Express</td>
-                    <td>Angel City</td>
-                    <td>25min</td>
-                    <td>7:05pm</td>
-                    <td>10 min</td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-star"></i> Stocking Special</td>
-                    <td>Candy Place</td>
-                    <td>15min</td>
-                    <td>6:55pm</td>
-                    <td>55 min</td>
-                </tr>
-                <tr>
-                    <td><i class="fas fa-star"></i> Gift Rider</td>
-                    <td>Santa's Workshop</td>
-                    <td>55min</td>
-                    <td>8:00pm</td>
-                    <td>165 min</td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -63,7 +42,8 @@
         <div class="card border-primary">
             <h6 class="card-header bg-primary text-white"><i class="fas fa-key"></i> Train Admin</h6>
 
-            <form action="javascript:app_input_submit()" class="form needs-validation" novalidate style="padding: 5px 20px 5px 20px">
+            <form action="javascript:app_input_submit()" class="form needs-validation" novalidate
+                style="padding: 5px 20px 5px 20px">
 
                 <!-- Train Name -->
                 <label class="text-secondary font-weight-bold">Insert new train data</label>
@@ -87,11 +67,11 @@
                         </span>
                     </div>
                     <select class="custom-select" id="input-dest" required>
-                        <option selected value="0">Angel City</option>
-                        <option value="1">Cookievale</option>
-                        <option value="2">Gumdrop Lodge</option>
-                        <option value="3">Lutie Lake</option>
-                        <option value="4">Snowcone Hill</option>
+                        <option selected value="Angel City">Angel City</option>
+                        <option value="Cookievale">Cookievale</option>
+                        <option value="Gumdrop Lodge">Gumdrop Lodge</option>
+                        <option value="Lutie Lake">Lutie Lake</option>
+                        <option value="Snowcone Hill">Snowcone Hill</option>
                     </select>
                 </div>
 
@@ -103,7 +83,7 @@
                             <i class="fas fa-clock">&nbsp;</i>First Arrival
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Example: 18:45" id="input-time" required>
+                    <input type="time" class="form-control" value="00:00:00" id="input-time" required>
                     <div class="invalid-feedback">
                         Please inlcude a time.
                     </div>
@@ -117,13 +97,14 @@
                             <i class="fas fa-wave-square">&nbsp;</i>Frequency
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Example: 25" id="input-freq" required>
+                    <input type="number" class="form-control" placeholder="Example: 25" id="input-freq" required>
                     <div class="invalid-feedback">
                         Please inlcude a frequency
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-1" id="input-btn-submit"><i class="fas fa-plus-square mr-3"></i>Add
+                <button type="submit" class="btn btn-primary mb-1" id="input-btn-submit"><i
+                        class="fas fa-plus-square mr-3"></i>Add
                     Train</button>
             </form>
         </div>

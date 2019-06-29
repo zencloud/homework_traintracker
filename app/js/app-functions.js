@@ -22,7 +22,8 @@
 
 // Input Submit Successful
 function app_input_submit() {
-    console.log('test');
+    app_data_collect_input();
+    app_data_push();
 }
 
 // Collect input forms
@@ -30,7 +31,7 @@ function app_data_collect_input() {
 
     // Load up the input values
     let inputName = $('#input-name').val();
-    let inputDest = $('#input-dest :selected').val();
+    let inputDest = $('#input-dest option:selected').val();
     let inputTime = $('#input-time').val();
     let inputFreq = $('#input-freq').val();
 
@@ -46,4 +47,27 @@ function app_data_collect_input() {
 // Push Data
 function app_data_push() {
     db.ref().push(appData.inputCollection);
+}
+
+// Collect Data
+function app_data_collect() {
+
+    // Test package request loop
+    let query = db.ref();
+    query.once('value').then(function (data) {
+        data.forEach(function (keyData) {
+            
+            let dataObject = keyData.val();
+            let myHTML =
+                `<tr>
+                    <td><i class="fas fa-star"></i> ${dataObject.name}</td>
+                    <td>${dataObject.dest}</td>
+                    <td>25min</td>
+                    <td>7:05pm</td>
+                    <td>10 min</td>
+                </tr>`;
+
+            $('tbody').append(myHTML);
+        });
+    });
 }
